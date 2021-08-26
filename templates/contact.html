@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Contact - Company Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+	<style>
+    .row>* {flex-shrink: 0; width: 35%;  max-width: 100%;}
+		body{line-height:4.5rem; overflow-x: hidden; background-image: url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); background-repeat: no-repeat;}
+		.mt-3 {width: 63%;}
+		button {border-radius: 10px; margin-top: 15px !important; height: 37px; overflow: hidden; background: #ffa73b; border: 0; padding: 24px 59px; color: #fff; transition: 0.4s; border-radius: 4px; padding-bottom: 20px; line-height: 0 !important;}
+		.form-control{line-height: 3rem; margin-left: calc(100% - 300px);}
+    .breadcrumbs{margin-top: 0px; background: #ffa73b;}
+    form{margin-top: 120px;  height: 690px;}
+    label{width:100%; display: -webkit-box;}
+    :root {--animate-duration: 0s; --animate-delay: 0s; --animate-repeat: 0;}
+    #message1 {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 7px;
+  margin-top: 0px;
+}
+
+#message1 p {
+  padding: 0px 35px;
+  font-size: 15px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+  margin-bottom: -3rem;
+  margin-top: -2rem;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+  margin-bottom: -3rem;
+  margin-top: -2rem;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+	</style>
+  <!-- =======================================================
+  * Template Name: Company - v4.3.0
+  * Template URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Registration</h2>
+          <ol>
+            <li>Home</li>
+            <li>Contact</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-15">
+            <!-- <form action="{{ url_for('register') }}" method="post"> -->
+              <form action="http://127.0.0.1:{{port}}/register" style="background-color:#f7f7f7; opacity: 0.7;" method="post">
+              <div class="msg" align="center" style="color: red; margin-bottom: -108px;">{{ msg }}</div>
+              <div class="form-group mt-3" align="center"><br>
+                <input id="username" name="username" class="form-control" type="text" placeholder="Enter Your Username" required>
+              </div>
+              <div class="form-group mt-3" align="center">
+                <input id="email" class="form-control" name="email" type="email" placeholder="Enter Your Email ID" required>
+              </div>
+              <div class="form-group mt-3" align="center">
+                <input id="new_password" class="form-control" name="new_password" type="password" placeholder="Password" required>
+              </div>
+              <div class="form-group mt-3" align="center">
+                <label>
+                  <input id="confirm_password" class="form-control" name="confirm_password" type="password" placeholder="Confirm Password" required/>
+                  <span id='message' style="width: 112px;"></span>
+                </label>
+              </div>
+              <div class="form-group mt-3" align="center">
+                  <select id="country" class="form-control" name="country" placeholder="Enter your Country" style="appearance: auto;" required><i class="bi bi-chevron-down"></i></select>
+              </div>
+              <div class="form-group mt-3" align="center">
+                <input class="form-control" name="mnemonic" type="text" id="subject" placeholder="Enter the Existing Mnemonic key" required>
+              </div>
+              <div class="text-center"><button type="submit">Submit</button></div>
+              <div id="message1">
+                <h5>Password must contain the following:</h5>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+              </div>
+              <div class="col-lg-4 info mt-4 mt-lg-0" style="margin-left: 1rem; width: 50%;">
+                Already have an account?
+                <a href="http://127.0.0.1:5001/login">
+                  Sign in
+                </a>
+              </div>
+            </form>
+          </div>
+         
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+  <script src="static/assets/js/countries.js"></script>
+  <script type="text/javascript">
+    $('#new_password, #confirm_password').on('keyup', function () {
+  if ($('#new_password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+var mymessage = document.getElementById("confirm_password");
+mymessage.onblur = function() {
+   document.getElementById("message").style.display = "none";
+ }
+ mymessage.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+var myInput = document.getElementById("new_password");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message1").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+ myInput.onblur = function() {
+   document.getElementById("message1").style.display = "none";
+ }
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+</script>
+<script language="javascript">
+	populateCountries("country"); // first parameter is id of country drop-down and second parameter is id of state drop-down
+</script>
+
+
+</body>
+
+</html>
