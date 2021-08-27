@@ -21,21 +21,21 @@ from flask_login import LoginManager, login_user, logout_user, current_user
 
 
 # Algod API key
-algod_token = 'FXzuAqrOV71I7QBnq8M009ACS6UUqvW11RBiPIj9'
-algod_address ='https://testnet-algorand.api.purestake.io/ps2'
+algod_token = '*****************'
+algod_address ='*****************'
 
 app = Flask(__name__)
 
 # Google captcha details
-app.config['RECAPTCHA_SITE_KEY'] = '6LfMGR8cAAAAAPfUCqHaAgxBwIRHa_eZALmeX2Ak'
-app.config['RECAPTCHA_SECRET_KEY'] = '6LfMGR8cAAAAAO8-saQCyj9J_Z-dtxZSMS10RgS5'
+app.config['RECAPTCHA_SITE_KEY'] = 'Your catcha site key'
+app.config['RECAPTCHA_SECRET_KEY'] = 'Your captcha secret key'
 recaptcha = ReCaptcha(app=app)
 
 # Google email authorization
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'rakeshvwlts@gmail.com'
-app.config['MAIL_PASSWORD'] = 'V@95Rakesh$'
+app.config['MAIL_USERNAME'] = 'Your email account'
+app.config['MAIL_PASSWORD'] = 'Your email password'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -49,7 +49,7 @@ s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 #SQL Server DB connection
 conn = pyodbc.connect(r'DRIVER={SQL Server};'
-    r'SERVER=WL21L-02;'
+    r'SERVER=*******;'
     r'DATABASE=Sample;'
     r'Trusted_Connection=yes;')
 
